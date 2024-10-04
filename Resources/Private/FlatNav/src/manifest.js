@@ -1,7 +1,7 @@
 import React from 'react';
 import manifest from '@neos-project/neos-ui-extensibility';
 import makeFlatNavContainer from './makeFlatNavContainer';
-import style from './style.css';
+import style from './style.modules.css';
 
 manifest('Psmb.FlatNav:FlatNav', {}, globalRegistry => {
     const containerRegistry = globalRegistry.get('containers');

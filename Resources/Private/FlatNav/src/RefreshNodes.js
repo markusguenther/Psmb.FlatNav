@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import mergeClassNames from 'classnames';
 import {neos} from '@neos-project/neos-ui-decorators';
 import {IconButton} from '@neos-project/react-ui-components';
-import style from './style.css';
+import style from './style.modules.css';
 
 @neos(globalRegistry => ({
     i18nRegistry: globalRegistry.get('i18n')
