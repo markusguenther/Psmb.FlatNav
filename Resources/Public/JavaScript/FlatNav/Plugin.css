@@ -4,7 +4,7 @@
   width: 100% !important;
 }
 .style-modules__tabsContent_gGud6a__ {
-  height: calc(100% - 41px);
+  height: calc(100% - 42px);
 }
 .style-modules__tabsPanel_gGud6a__ {
   height: 100%;
@@ -50,6 +50,7 @@
 .style-modules__treeWrapper_gGud6a__ {
   flex-grow: 1;
   padding: 5px 0;
+  overflow-y: scroll;
 }
 .style-modules__pageTreeToolbarOriginal_gGud6a__ :is(div) {
   border-top: 0;
