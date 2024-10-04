@@ -610,141 +610,25 @@
     }
   });
 
-  // node_modules/lodash.debounce/index.js
-  var require_lodash = __commonJS({
-    "node_modules/lodash.debounce/index.js"(exports, module) {
-      var FUNC_ERROR_TEXT = "Expected a function";
-      var NAN = 0 / 0;
-      var symbolTag = "[object Symbol]";
-      var reTrim = /^\s+|\s+$/g;
-      var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
-      var reIsBinary = /^0b[01]+$/i;
-      var reIsOctal = /^0o[0-7]+$/i;
-      var freeParseInt = parseInt;
-      var freeGlobal = typeof global == "object" && global && global.Object === Object && global;
-      var freeSelf = typeof self == "object" && self && self.Object === Object && self;
-      var root = freeGlobal || freeSelf || Function("return this")();
-      var objectProto = Object.prototype;
-      var objectToString = objectProto.toString;
-      var nativeMax = Math.max;
-      var nativeMin = Math.min;
-      var now = function() {
-        return root.Date.now();
+  // src/Helper/debounce.js
+  var debounce, debounce_default;
+  var init_debounce = __esm({
+    "src/Helper/debounce.js"() {
+      debounce = (callback, wait) => {
+        let timeoutId = null;
+        return (...args) => {
+          window.clearTimeout(timeoutId);
+          timeoutId = window.setTimeout(() => {
+            callback.apply(null, args);
+          }, wait);
+        };
       };
-      function debounce2(func, wait, options) {
-        var lastArgs, lastThis, maxWait, result, timerId, lastCallTime, lastInvokeTime = 0, leading = false, maxing = false, trailing = true;
-        if (typeof func != "function") {
-          throw new TypeError(FUNC_ERROR_TEXT);
-        }
-        wait = toNumber(wait) || 0;
-        if (isObject(options)) {
-          leading = !!options.leading;
-          maxing = "maxWait" in options;
-          maxWait = maxing ? nativeMax(toNumber(options.maxWait) || 0, wait) : maxWait;
-          trailing = "trailing" in options ? !!options.trailing : trailing;
-        }
-        function invokeFunc(time) {
-          var args = lastArgs, thisArg = lastThis;
-          lastArgs = lastThis = void 0;
-          lastInvokeTime = time;
-          result = func.apply(thisArg, args);
-          return result;
-        }
-        function leadingEdge(time) {
-          lastInvokeTime = time;
-          timerId = setTimeout(timerExpired, wait);
-          return leading ? invokeFunc(time) : result;
-        }
-        function remainingWait(time) {
-          var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime, result2 = wait - timeSinceLastCall;
-          return maxing ? nativeMin(result2, maxWait - timeSinceLastInvoke) : result2;
-        }
-        function shouldInvoke(time) {
-          var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime;
-          return lastCallTime === void 0 || timeSinceLastCall >= wait || timeSinceLastCall < 0 || maxing && timeSinceLastInvoke >= maxWait;
-        }
-        function timerExpired() {
-          var time = now();
-          if (shouldInvoke(time)) {
-            return trailingEdge(time);
-          }
-          timerId = setTimeout(timerExpired, remainingWait(time));
-        }
-        function trailingEdge(time) {
-          timerId = void 0;
-          if (trailing && lastArgs) {
-            return invokeFunc(time);
-          }
-          lastArgs = lastThis = void 0;
-          return result;
-        }
-        function cancel() {
-          if (timerId !== void 0) {
-            clearTimeout(timerId);
-          }
-          lastInvokeTime = 0;
-          lastArgs = lastCallTime = lastThis = timerId = void 0;
-        }
-        function flush() {
-          return timerId === void 0 ? result : trailingEdge(now());
-        }
-        function debounced() {
-          var time = now(), isInvoking = shouldInvoke(time);
-          lastArgs = arguments;
-          lastThis = this;
-          lastCallTime = time;
-          if (isInvoking) {
-            if (timerId === void 0) {
-              return leadingEdge(lastCallTime);
-            }
-            if (maxing) {
-              timerId = setTimeout(timerExpired, wait);
-              return invokeFunc(lastCallTime);
-            }
-          }
-          if (timerId === void 0) {
-            timerId = setTimeout(timerExpired, wait);
-          }
-          return result;
-        }
-        debounced.cancel = cancel;
-        debounced.flush = flush;
-        return debounced;
-      }
-      function isObject(value) {
-        var type = typeof value;
-        return !!value && (type == "object" || type == "function");
-      }
-      function isObjectLike(value) {
-        return !!value && typeof value == "object";
-      }
-      function isSymbol(value) {
-        return typeof value == "symbol" || isObjectLike(value) && objectToString.call(value) == symbolTag;
-      }
-      function toNumber(value) {
-        if (typeof value == "number") {
-          return value;
-        }
-        if (isSymbol(value)) {
-          return NAN;
-        }
-        if (isObject(value)) {
-          var other = typeof value.valueOf == "function" ? value.valueOf() : value;
-          value = isObject(other) ? other + "" : other;
-        }
-        if (typeof value != "string") {
-          return value === 0 ? value : +value;
-        }
-        value = value.replace(reTrim, "");
-        var isBinary = reIsBinary.test(value);
-        return isBinary || reIsOctal.test(value) ? freeParseInt(value.slice(2), isBinary ? 2 : 8) : reIsBadHex.test(value) ? NAN : +value;
-      }
-      module.exports = debounce2;
+      debounce_default = debounce;
     }
   });
 
   // src/makeFlatNavContainer.js
-  var import_react6, import_react_ui_components6, import_react_redux4, import_neos_ui_redux_store4, import_neos_ui_decorators5, import_lodash, parentNodeContextPath, makeFlatNavContainer, makeFlatNavContainer_default;
+  var import_react6, import_react_ui_components6, import_react_redux4, import_neos_ui_redux_store4, import_neos_ui_decorators5, parentNodeContextPath, makeFlatNavContainer, makeFlatNavContainer_default;
   var init_makeFlatNavContainer = __esm({
     "src/makeFlatNavContainer.js"() {
       import_react6 = __toESM(require_react());
@@ -756,7 +640,7 @@
       init_neos_ui_backend_connector();
       init_FlatNav();
       init_style_modules();
-      import_lodash = __toESM(require_lodash());
+      init_debounce();
       parentNodeContextPath = (contextPath) => {
         if (typeof contextPath !== "string") {
           return null;
@@ -956,7 +840,7 @@
               }
               const fetchNodes = this.makeFetchNodes(presetName);
               const resetNodes = this.makeResetNodes(presetName, fetchNodes);
-              const debouncedFetchNodes = (0, import_lodash.default)(fetchNodes, 400);
+              const debouncedFetchNodes = debounce_default(fetchNodes, 400);
               const setSearchTerm = this.makeSetSearchTerm(presetName, debouncedFetchNodes);
               const fetchNewReference = this.makeGetNewReference(presetName);
               return /* @__PURE__ */ import_react6.default.createElement(import_react_ui_components6.Tabs.Panel, { id: presetName, key: presetName, icon: preset.icon, tooltip: this.props.i18nRegistry.translate(preset.label), theme: {

@@ -9,8 +9,5 @@
     "@neos-project/neos-ui-extensibility": "^8.3.0",
     "esbuild": "^0.17.0",
     "esbuild-css-modules-plugin": "^3.1.2"
-  },
-  "dependencies": {
-    "lodash.debounce": "^4.0.8"
   }
 }

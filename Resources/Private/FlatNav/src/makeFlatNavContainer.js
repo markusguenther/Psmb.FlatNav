@@ -7,7 +7,7 @@ import {fetchWithErrorHandling} from '@neos-project/neos-ui-backend-connector';
 import backend from '@neos-project/neos-ui-backend-connector';
 import FlatNav from './FlatNav';
 import style from './style.modules.css';
-import debounce from 'lodash.debounce';
+import debounce from './Helper/debounce';
 
 // Taken from here, as it's not exported in the UI
 // https://github.com/neos/neos-ui/blob/b2a52d66a211b192dfc541799779a8be27bf5a31/packages/neos-ui-sagas/src/CR/NodeOperations/helpers.js#L3
