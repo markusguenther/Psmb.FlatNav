@@ -36,7 +36,7 @@ export default class RefreshNodes extends PureComponent {
                 disabled={disabled}
                 onClick={this.handleClick}
                 icon="sync"
-                hoverStyle="clean"
+                hoverStyle="brand"
                 title={i18nRegistry.translate('refresh')}
             />
         );
