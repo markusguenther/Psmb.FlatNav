@@ -155,15 +155,16 @@ export default class FlatNav extends Component {
                     )).length > 0;
                     const isRemoved = item?.properties?._removed;
                     const nodeIconComponent = this.getNodeIconComponent(item);
+                    const nodeItemClassNames = mergeClassNames({
+                        [style.node]: true,
+                        [style.nodeFocused]: isFocused,
+                        [style.nodeDirty]: isDirty,
+                        [style.nodeRemoved]: isRemoved
+                    })
 
                     return (
                         <div
-                            className={mergeClassNames({
-                                [style.node]: true,
-                                [style['node--focused']]: isFocused,
-                                [style['node--dirty']]: isDirty,
-                                [style['node--removed']]: isRemoved
-                            })}
+                            className={nodeItemClassNames}
                             key={contextPath}
                             onClick={() => {
                                 if ( ! isRemoved) {
@@ -174,11 +175,11 @@ export default class FlatNav extends Component {
                             role="button"
                             >
                             <div
-                                className={style.node__iconWrapper}>
+                                className={style.nodeIconWrapper}>
                                 {nodeIconComponent}
                             </div>
                             <span
-                                className={style.node__label}>
+                                className={style.nodeLabel}>
                                 {item?.label}
                             </span>
                         </div>

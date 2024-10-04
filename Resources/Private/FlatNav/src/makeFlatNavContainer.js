@@ -232,8 +232,8 @@ const makeFlatNavContainer = OriginalPageTree => {
         render() {
             return (
                 <Tabs theme={{
-                    tabs__content: style.tabs__content,
-                    tabs__panel: style.tabs__panel
+                    tabs__content: style.tabsContent,
+                    tabs__panel: style.tabsPanel
                 }}>
                     {Object.keys(this.props.options.presets).map(presetName => {
                         const preset = this.props.options.presets[presetName];

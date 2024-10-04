@@ -3,11 +3,11 @@
     opacity: 1 !important;
 }
 
-.tabs__content {
+.tabsContent {
     height: calc(100% - 41px);
 }
 
-.tabs__panel {
+.tabsPanel {
     height: 100%;
 }
 
@@ -31,11 +31,11 @@
 }
 .toolbarSearchInput {
     border-radius: 0;
+}
 
-    &:focus {
-        background-color: var(--colors-ContrastDark);
-        color: var(--colors-ContrastBrightest);
-    }
+.toolbarSearchInput:focus {
+    background-color: var(--colors-ContrastDark);
+    color: var(--colors-ContrastBrightest);
 }
 .toolbarSearchClearButton {
     background-color: var(--colors-ContrastDark);
@@ -53,14 +53,12 @@
     border-bottom: 1px solid var(--colors-ContrastDark);
 }
 
-.pageTreeToolbarOriginal {
-    :is(div) {
-        border-top: 0;
-    }
+.pageTreeToolbarOriginal :is(div) {
+    border-top: 0;
 }
 
 .node {
-    position: relative;
+    display: flex;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -68,32 +66,27 @@
     padding: 3px 6px;
     cursor: pointer;
 }
-.node--focused {
-    background-color: var(--colors-ContrastNeutral);
-}
-.node--focused .node__label {
-    color: var(--colors-PrimaryBlue);
-}
-.node--dirty {
-    border-left: 2px solid var(--colors-Warn);
-    padding-left: 4px;
-}
-.node--removed {
-    cursor: not-allowed;
-    border-color: var(--colors-Error);
-}
-.node--removed .node__label,
-.node--removed .node__iconWrapper {
-    opacity: 0.5;
-}
 
-.node__iconWrapper {
+.nodeIconWrapper {
     width: 2em;
-    display: inline-block;
-    position: absolute;
     text-align: center;
 }
 
-.node__label {
-    margin-left: 2em;
+.nodeFocused {
+    background-color: var(--colors-ContrastNeutral);
+}
+.nodeFocused .nodeLabel {
+    color: var(--colors-PrimaryBlue);
+}
+.nodeDirty {
+    border-left: 2px solid var(--colors-Warn);
+    padding-left: 4px;
+}
+.nodeRemoved {
+    cursor: not-allowed;
+    border-color: var(--colors-Error);
+}
+.nodeRemoved .nodeLabel,
+.nodeRemoved .nodeIconWrapper {
+    opacity: 0.5;
 }
