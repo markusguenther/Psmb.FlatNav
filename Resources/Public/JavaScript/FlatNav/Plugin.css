@@ -6,9 +6,12 @@
 .style-modules__tabsContent_gGud6a__ {
   height: calc(100% - 41px);
 }
-.style-modules__tabsPanel_gGud6a__,
+.style-modules__tabsPanel_gGud6a__ {
+  height: 100%;
+}
 .style-modules__panel_gGud6a__ {
   height: 100%;
+  overflow-y: hidden;
 }
 .style-modules__toolbar_gGud6a__ {
   background-color: var(--colors-ContrastDarker);
@@ -44,17 +47,24 @@
   height: 100%;
   display: flex;
 }
+.style-modules__treeWrapper_gGud6a__ {
+  flex-grow: 1;
+  padding: 5px 0;
+}
 .style-modules__pageTreeToolbarOriginal_gGud6a__ :is(div) {
   border-top: 0;
 }
 .style-modules__node_gGud6a__ {
-  white-space: nowrap;
-  text-overflow: ellipsis;
   cursor: pointer;
   width: 100%;
   padding: 3px 6px;
   display: flex;
   overflow: hidden;
+}
+.style-modules__node_gGud6a__:hover .style-modules__nodeIconWrapper_gGud6a__,
+.style-modules__node_gGud6a__:hover .style-modules__nodeIconWrapper_gGud6a__ svg.style-modules__baseIcon_gGud6a__,
+.style-modules__node_gGud6a__:hover .style-modules__nodeLabel_gGud6a__ {
+  color: var(--colors-PrimaryBlueHover);
 }
 .style-modules__nodeIconWrapper_gGud6a__ {
   text-align: center;

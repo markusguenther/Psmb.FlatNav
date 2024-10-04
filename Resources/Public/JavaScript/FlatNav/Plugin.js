@@ -298,10 +298,11 @@
   });
 
   // src/style.modules.css
-  var loadMoreButton, node, nodeDirty, nodeFocused, nodeIconWrapper, nodeLabel, nodeRemoved, pageTreeContainer, pageTreeToolbarOriginal, panel, tabsContent, tabsPanel, toolbar, toolbarButtons, toolbarSearch, toolbarSearchClearButton, toolbarSearchInput, toolbarSearchNoResults, style_modules_default;
+  var baseIcon, loadMoreButton, node, nodeDirty, nodeFocused, nodeIconWrapper, nodeLabel, nodeRemoved, pageTreeContainer, pageTreeToolbarOriginal, panel, tabsContent, tabsPanel, toolbar, toolbarButtons, toolbarSearch, toolbarSearchClearButton, toolbarSearchInput, toolbarSearchNoResults, treeWrapper, style_modules_default;
   var init_style_modules = __esm({
     "src/style.modules.css"() {
       init_();
+      baseIcon = "style-modules__baseIcon_gGud6a__";
       loadMoreButton = "style-modules__loadMoreButton_gGud6a__";
       node = "style-modules__node_gGud6a__";
       nodeDirty = "style-modules__nodeDirty_gGud6a__";
@@ -320,7 +321,9 @@
       toolbarSearchClearButton = "style-modules__toolbarSearchClearButton_gGud6a__";
       toolbarSearchInput = "style-modules__toolbarSearchInput_gGud6a__";
       toolbarSearchNoResults = "style-modules__toolbarSearchNoResults_gGud6a__";
+      treeWrapper = "style-modules__treeWrapper_gGud6a__";
       style_modules_default = {
+        "baseIcon": baseIcon,
         "loadMoreButton": loadMoreButton,
         "node": node,
         "nodeDirty": nodeDirty,
@@ -338,7 +341,8 @@
         "toolbarSearch": toolbarSearch,
         "toolbarSearchClearButton": toolbarSearchClearButton,
         "toolbarSearchInput": toolbarSearchInput,
-        "toolbarSearchNoResults": toolbarSearchNoResults
+        "toolbarSearchNoResults": toolbarSearchNoResults,
+        "treeWrapper": treeWrapper
       };
     }
   });
@@ -524,12 +528,12 @@
           const isHiddenAfter = node2?.properties?._hiddenAfterDateTime;
           const nodeTypeIcon = nodeType?.ui?.icon;
           if (isHidden) {
-            return /* @__PURE__ */ import_react5.default.createElement("span", { className: "fa-layers fa-fw" }, /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: nodeTypeIcon }), /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: "circle", color: "error", transform: "shrink-3 down-6 right-4" }), /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: "times", transform: "shrink-7 down-6 right-4" }));
+            return /* @__PURE__ */ import_react5.default.createElement("span", { className: "fa-layers fa-fw" }, /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: nodeTypeIcon, className: style_modules_default.baseIcon }), /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: "circle", color: "error", transform: "shrink-3 down-6 right-4" }), /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: "times", transform: "shrink-7 down-6 right-4" }));
           }
           if (isHiddenBefore || isHiddenAfter) {
-            return /* @__PURE__ */ import_react5.default.createElement("span", { className: "fa-layers fa-fw" }, /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: nodeTypeIcon }), /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: "circle", color: "primaryBlue", transform: "shrink-5 down-6 right-4" }), /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: "clock", transform: "shrink-9 down-6 right-4" }));
+            return /* @__PURE__ */ import_react5.default.createElement("span", { className: "fa-layers fa-fw" }, /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: nodeTypeIcon, className: style_modules_default.baseIcon }), /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: "circle", color: "primaryBlue", transform: "shrink-5 down-6 right-4" }), /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: "clock", transform: "shrink-9 down-6 right-4" }));
           }
-          return /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: nodeTypeIcon });
+          return /* @__PURE__ */ import_react5.default.createElement(import_react_ui_components5.Icon, { icon: nodeTypeIcon, className: style_modules_default.baseIcon });
         }
         render() {
           const { focused, nodes, isLoadingReferenceNodePath, isLoading, preset, isAllowedToAddChildOrSiblingNodes, canBeDeleted, canBeEdited } = this.props;

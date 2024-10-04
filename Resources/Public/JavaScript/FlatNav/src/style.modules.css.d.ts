@@ -1,3 +1,4 @@
+export declare const baseIcon: string;
 export declare const loadMoreButton: string;
 export declare const node: string;
 export declare const nodeDirty: string;
@@ -16,8 +17,10 @@ export declare const toolbarSearch: string;
 export declare const toolbarSearchClearButton: string;
 export declare const toolbarSearchInput: string;
 export declare const toolbarSearchNoResults: string;
+export declare const treeWrapper: string;
 
 declare const ClassNames: {
+  "baseIcon": string;
   "loadMoreButton": string;
   "node": string;
   "nodeDirty": string;
@@ -36,5 +39,6 @@ declare const ClassNames: {
   "toolbarSearchClearButton": string;
   "toolbarSearchInput": string;
   "toolbarSearchNoResults": string;
+  "treeWrapper": string;
 };
 export default ClassNames;

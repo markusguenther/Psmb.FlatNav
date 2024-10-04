@@ -13,6 +13,7 @@
 
 .panel {
     height: 100%;
+    overflow-y: hidden;
 }
 
 .toolbar {
@@ -53,6 +54,11 @@
     border-bottom: 1px solid var(--colors-ContrastDark);
 }
 
+.treeWrapper {
+    flex-grow: 1;
+    padding: 5px 0;
+}
+
 .pageTreeToolbarOriginal :is(div) {
     border-top: 0;
 }
@@ -60,11 +66,17 @@
 .node {
     display: flex;
     overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
     width: 100%;
     padding: 3px 6px;
     cursor: pointer;
+
+    &:hover {
+        .nodeIconWrapper,
+        .nodeIconWrapper svg.baseIcon,
+        .nodeLabel {
+            color: var(--colors-PrimaryBlueHover);
+        }
+    }
 }
 
 .nodeIconWrapper {
