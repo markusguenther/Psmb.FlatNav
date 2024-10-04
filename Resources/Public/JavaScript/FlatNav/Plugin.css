@@ -55,9 +55,11 @@
   border-top: 0;
 }
 .style-modules__node_gGud6a__ {
+  white-space: nowrap;
+  text-overflow: ellipsis;
   cursor: pointer;
   width: 100%;
-  padding: 3px 6px;
+  padding: .25rem .5rem;
   display: flex;
   overflow: hidden;
 }
@@ -87,4 +89,10 @@
 .style-modules__nodeRemoved_gGud6a__ .style-modules__nodeLabel_gGud6a__,
 .style-modules__nodeRemoved_gGud6a__ .style-modules__nodeIconWrapper_gGud6a__ {
   opacity: .5;
+}
+.style-modules__nodeLabel_gGud6a__ {
+  text-overflow: ellipsis;
+  width: calc(100% - 3rem);
+  display: inline-block;
+  overflow-x: hidden;
 }

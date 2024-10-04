@@ -67,7 +67,9 @@
     display: flex;
     overflow: hidden;
     width: 100%;
-    padding: 3px 6px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0.25rem 0.5rem;
     cursor: pointer;
 
     &:hover {
@@ -101,4 +103,11 @@
 .nodeRemoved .nodeLabel,
 .nodeRemoved .nodeIconWrapper {
     opacity: 0.5;
+}
+
+.nodeLabel {
+    overflow-x: hidden;
+    width: calc(100% - 2rem - 1rem);
+    text-overflow: ellipsis;
+    display: inline-block;
 }
