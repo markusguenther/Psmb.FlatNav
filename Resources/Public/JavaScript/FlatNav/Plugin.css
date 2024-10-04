@@ -19,6 +19,7 @@
   display: flex;
 }
 .style-modules__toolbarButtons_gGud6a__ {
+  flex-grow: 1;
   flex-shrink: 0;
 }
 .style-modules__toolbarSearch_gGud6a__ {
